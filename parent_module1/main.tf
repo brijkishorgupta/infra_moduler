@@ -1,33 +1,33 @@
 module "rgs" {
-  source                 = "../child_module/rgs"
+  source = "../child_module/rgs"
 
-rgs = var.rgs
+  rgs = var.rgs
 
 }
 
 module "network" {
-  depends_on = [ module.rgs ]
+  depends_on = [module.rgs]
 
- source =  "../child_module/network"
+  source = "../child_module/network"
 
- vnet = var.vnet_name
+  vnet = var.vnet_name
 
 }
 
 module "subnet" {
 
-depends_on = [ module.rgs, module.network ]
+  depends_on = [module.rgs, module.network]
 
   source = "../child_module/subnet"
   subnet = var.subnet
-  
+
 }
 module "public_ip" {
-  depends_on = [ module.rgs, module.network, module.subnet ]
+  depends_on = [module.rgs, module.network, module.subnet]
 
   source = "../child_module/public_ip"
-  pip = var.pip_name
-  
+  pip    = var.pip_name
+
 }
 
 # module "frontend_vm" {

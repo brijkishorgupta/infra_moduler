@@ -5,12 +5,12 @@ terraform {
       version = "4.59.0"
     }
   }
-#   backend "azurerm" {
-#     resource_group_name  = "brij-final"
-#     storage_account_name = "brijsa1"
-#     container_name       = "brijcont"
-#     key                  = "brij1.tfstate"
-#   }
+  #   backend "azurerm" {
+  #     resource_group_name  = "brij-final"
+  #     storage_account_name = "brijsa1"
+  #     container_name       = "brijcont"
+  #     key                  = "brij1.tfstate"
+  #   }
 }
 
 provider "azurerm" {

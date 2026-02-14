@@ -32,3 +32,28 @@ pip_name = {
 
   }
 }
+nic = {
+  "nic1" = {
+    name                = "brij-nic"
+    resource_group_name = "brij1"
+    location            = "West Europe"
+
+    ip_configuration = {
+    name                          = "internal"
+    private_ip_address_allocation = "Dynamic"
+    
+  }
+}
+}
+vm = {
+  "vm1" = {
+    name                = "brij-vm"
+    resource_group_name = "brij1"
+    location            = "West Europe"
+    vm_size             = "Standard_D2s_v5"
+    admin_username      = "azureuser"
+    admin_password      = "P@ssw0rd1234!"
+    disable_password_authentication = false
+
+  }
+}

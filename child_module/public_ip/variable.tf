@@ -1,11 +1,11 @@
 variable "pip" {
 
-    type = map(object({
+    # type = map(object({
 
-    name = string
-    resource_group_name = string
-    location = string
-    allocation_method = string
-    }))
+    # name = string
+    # resource_group_name = string
+    # location = string
+    # allocation_method = string
+    # }))
   
 }

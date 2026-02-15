@@ -25,6 +25,7 @@ variable "subnet" {
   #   address_prefixes     = list(string)
   # }))
 }
+
 variable "pip_name" {
 
   # type = map(object({
@@ -41,3 +42,5 @@ variable "pip_name" {
 #   variable "network_interface_ids" {
 #   type = list(string)
 # }
+variable "SQL_server" {}
+variable "SQL_database" {}

@@ -19,8 +19,8 @@ module "subnet" {
 
   source = "../child_module/subnet"
   subnet = var.subnet
-
 }
+
 module "public_ip" {
   depends_on = [module.rgs, module.network, module.subnet]
 
@@ -40,4 +40,18 @@ module "virtual_machine" {
 
   source = "../child_module/virtual_machin"
   vm = var.vm  
+}
+module "SQL_server" {
+  depends_on = [ module.rgs, module.network, module.subnet, module.network_interface, module.public_ip, module.virtual_machine ]
+
+  source = "../child_module/SQL_server"
+  SQL_server = var.SQL_server
+  
+}
+module "SQL_database" {
+  depends_on = [ module.rgs, module.network, module.subnet, module.network_interface, module.public_ip, module.virtual_machine, module.SQL_server ]
+
+  source = "../child_module/SQL_database"
+  SQL_database = var.SQL_database
+
 }
